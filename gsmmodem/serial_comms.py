@@ -22,7 +22,8 @@ class SerialComms(object):
     # Default timeout for serial port reads (in seconds)
     timeout = 1
 
-    def __init__(self, port, baudrate=115200, notifyCallbackFunc=None, fatalErrorCallbackFunc=None, *args, **kwargs):
+    def __init__(self, port, baudrate=115200, notifyCallbackFunc=None, fatalErrorCallbackFunc=None, 
+                xonxoff=False, dsrdtr=True, rtscts=True, *args, **kwargs):
         """ Constructor
 
         :param fatalErrorCallbackFunc: function to call if a fatal error occurs in the serial device reading thread
@@ -31,6 +32,10 @@ class SerialComms(object):
         self.alive = False
         self.port = port
         self.baudrate = baudrate
+
+        self.xonxoff = xonxoff
+        self.dsrdtr = dsrdtr
+        self.rtscts = rtscts
 
         self._responseEvent = None # threading.Event()
         self._expectResponseTermSeq = None # expected response terminator sequence
@@ -47,7 +52,7 @@ class SerialComms(object):
 
     def connect(self):
         """ Connects to the device and starts the read thread """
-        self.serial = serial.Serial(dsrdtr=True, rtscts=True, port=self.port, baudrate=self.baudrate,
+        self.serial = serial.Serial(xonxoff=self.xonxoff, dsrdtr=self.dsrdtr, rtscts=self.rtscts, port=self.port, baudrate=self.baudrate,
                                     timeout=self.timeout,*self.com_args,**self.com_kwargs)
         # Start read thread
         self.alive = True

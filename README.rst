@@ -1,5 +1,5 @@
-python-gsmmodem-new
-===================
+python-gsmmodem-2025
+====================
 *GSM modem module for Python*
 
 python-gsmmodem is a module that allows easy control of a GSM modem attached
@@ -28,6 +28,12 @@ Bundled utilities:
 - **identify-modem.py**: simple utility to identify attached modem. Can also be
   used to provide debug information used for development of python-gsmmodem. 
 
+How is this different than https://github.com/babca/python-gsmmodem?
+--------------------------------------------------------------------
+It seems the `python-gsmmodem-new` repository is not maintained anymore. 
+This fork is a copy of the last commit from the original repository, with some modifications.
+Specifically, I started this to handle SIM800 modem, which require xonxoff flow control to work properly.
+
 How to use this package
 -----------------------
 
@@ -44,32 +50,32 @@ Requirements
 How to install this package
 ---------------------------
 
-There are multiple ways to install ``python-gsmmodem-new`` package:
+There are multiple ways to install ``python-gsmmodem-2025`` package:
 
 Automatic installation of the latest "stable" release from PyPI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
-    pip install python-gsmmodem-new
+    pip install python-gsmmodem-2025
 
 `pip <http://www.pip-installer.org>`_ will automatically download and install
 all dependencies, as required. You can also utilise ``easy_install`` in the
 same manner as using ``pip`` above.  
 
-If you are utilising ``python-gsmmodem-new`` as part of another project,
+If you are utilising ``python-gsmmodem-2025`` as part of another project,
 add it to your ``install_requires`` section of your ``setup.py`` file and
 upon your project's installation, it will be pulled in automatically.
 
 Manual installation of the latest "stable" release from PyPI
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Download a ``python-gsmmodem-new`` archive from `PyPI
-<https://pypi.python.org/pypi/python-gsmmodem-new>`_, extract it and install the package with command::
+Download a ``python-gsmmodem-2025`` archive from `PyPI
+<https://pypi.python.org/pypi/python-gsmmodem-2025>`_, extract it and install the package with command::
 
     python setup.py install
 
-Note that ``python-gsmmodem-new`` package relies on ``pySerial`` for serial communications: 
+Note that ``python-gsmmodem-2025`` package relies on ``pySerial`` for serial communications: 
 https://github.com/pyserial/pyserial
 
 Installation of the latest commit from GitHub
@@ -81,7 +87,7 @@ Clone from GitHub::
     cd python-gsmmodem/
     python setup.py install
 
-Note that ``python-gsmmodem-new`` package relies on ``pySerial`` for serial communications: 
+Note that ``python-gsmmodem-2025`` package relies on ``pySerial`` for serial communications: 
 https://github.com/pyserial/pyserial
 
 Testing the package
