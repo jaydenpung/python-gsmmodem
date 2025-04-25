@@ -1,6 +1,6 @@
 python-gsmmodem-2025
 ====================
-*GSM modem module for Python*
+*GSM modem module for Python forked in 2025*
 
 python-gsmmodem is a module that allows easy control of a GSM modem attached
 to the system. It also includes a couple of useful commandline utilities for
